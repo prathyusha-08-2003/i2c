@@ -1,0 +1,16 @@
+Board: stm32f103c8t6
+1. In the Intial commit I have done LED blink of PC13. so I configured the mode to ouput 01, CNF as push
+   pull then I have used bitwise | to set the values and ~& to clear the particular bits. 
+   As the system clock is 72Mhz, I have created a delay using TIM2 peripheral. The prescaler value is 7199,
+   ARR(auto reload return) is 999, created a delay of 10s. I have a created a delay using nested for loop
+   and saw the blink goes on and off respectively.
+   Connections: connected stlinkv2 debugger to PC
+
+2. In the second commit I have initialized clock for USART1 and I have sent a char 'A' from transmitter and received via minicom.
+   So in minicom we have to disable flow control and baudrate same as transmitter using BRR register of USART1.
+   /* I'm sending a character via uasrt1 in stm32f103c8t6 board and connected a USB to UART converter and saw the output in minicom
+    STM32 USART1 TX (PA9)  --->  USB-UART RX (on PC)
+    GND --------------------> USB-UART GND
+    Connections: USB to UART Receiver(Green wire) to PA9 Tx of stm32
+                 USB to UART GND(black wire) to gnd of stm32
+	STM32 TX (PA9) → USB-UART RX --> This is the data the STM32 sends out --> USB-UART adapter --> Converts the STM32’s UART signals (TX/RX) to USB data that your PC can understand --> Minicom on PC --> Reads the data coming from the USB-UART adapter and displays it on your screen.

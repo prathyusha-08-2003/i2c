@@ -1,0 +1,8 @@
+export PATH=$PATH:/opt/st/stm32cubeide_1.17.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.1.0.202410170702/tools/bin
+
+which arm-none-eabi-gdb
+arm-none-eabi-gdb --version
+
+echo 'export PATH=$PATH:/opt/st/stm32cubeide_1.17.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.1.0.202410170702/tools/bin' >> ~/.bashrc
+source ~/.bashrc
+
