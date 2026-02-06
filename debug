@@ -1,0 +1,5 @@
+openocd -f interface/stlink.cfg -f target/stm32f3x.cfg
+
+arm-none-eabi-gdb app.elf
+
+target remote localhost:3333
